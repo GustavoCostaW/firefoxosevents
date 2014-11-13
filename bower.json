@@ -1,0 +1,17 @@
+{
+  "name": "firefoxosevents",
+  "version": "0.0.0",
+  "homepage": "https://github.com/GustavoCostaW/firefoxosevents",
+  "authors": [
+    "Gustavo Costa <gustavo.costa.w@gmail.com>"
+  ],
+  "description": "firefox app events",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
