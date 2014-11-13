@@ -5,7 +5,7 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
 
     directive.restrict = 'E'; /* restrict this directive to elements */
 
-    directive.templateUrl = "app/scripts/directives/leaflet.html";
+    directive.templateUrl = "scripts/directives/leaflet.html";
     directive.scope =  {
         id: '=id'
     }

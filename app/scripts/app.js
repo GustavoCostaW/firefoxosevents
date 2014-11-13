@@ -12,7 +12,7 @@ angular.module('firefoxoseventsApp', [
                 templateUrl: 'views/evento.html',
                 controller: 'EventoController'
             }).when('/maps/:id', {
-                templateUrl: 'app/views/maps.html',
+                templateUrl: 'views/maps.html',
                 controller: 'MapsController'
             })
             .otherwise({
