@@ -1,4 +1,4 @@
 eventsfox
 =========
 
-App developer to FirefoxOS hackaton in Front In Maceio
+App developed to FirefoxOS hackaton in Front In Maceio
