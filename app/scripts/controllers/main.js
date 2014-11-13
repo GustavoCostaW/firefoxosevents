@@ -8,10 +8,8 @@
  * Controller of the firefoxoseventsApp
  */
 angular.module('firefoxoseventsApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('EventosController', function ($scope) {
+
+  }).controller('EventoController', function ($scope) {
+
   });
