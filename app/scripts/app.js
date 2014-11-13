@@ -9,15 +9,15 @@
  * Main module of the application.
  */
 angular.module('firefoxoseventsApp', [
-    'ngRoute'
+    'ngRoute',
   ])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/eventos', {
-                templateUrl: 'app/views/eventos.html',
+                templateUrl: 'views/eventos.html',
                 controller: 'EventosController'
             }).when('/evento', {
-                templateUrl: 'app/views/evento.html',
+                templateUrl: 'views/evento.html',
                 controller: 'EventoController'
             })
             .otherwise({

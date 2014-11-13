@@ -1,0 +1,10 @@
+html, body {height: 100%; font-family: 'Fira Sans', Arial, sans-serif;}
+body {background-color: #fcfcfc;}
+.events header {padding: 30px 0; text-align: center; margin-bottom: 15px; background-color: #fff;}
+.eventsList--item {margin-bottom: 20px; padding: 0 10px; overflow: hidden;}
+.eventsList--item a {text-decoration: none;}
+.event-title {font-size: 1.1rem; display: block; margin-bottom: 5px;}
+.event-title, time {color: #5D6BA1;}
+.event-figure {float: left; border-radius: 50%;}
+time {font-size: 0.8rem;}
+.event-guide {float: left; padding: 10px 0 0 15px;}
