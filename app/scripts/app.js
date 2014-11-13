@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name firefoxoseventsApp
- * @description
- * # firefoxoseventsApp
- *
- * Main module of the application.
- */
 angular.module('firefoxoseventsApp', [
     'ngRoute'
   ])
@@ -19,6 +11,9 @@ angular.module('firefoxoseventsApp', [
             }).when('/evento', {
                 templateUrl: 'app/views/evento.html',
                 controller: 'EventoController'
+            }).when('/maps/:id', {
+                templateUrl: 'app/views/maps.html',
+                controller: 'MapsController'
             })
             .otherwise({
                 redirectTo: '/eventos'
