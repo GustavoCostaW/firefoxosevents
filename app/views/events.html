@@ -6,20 +6,20 @@
         <article id="app-content">
             <ul class="eventsList">
                 <li class="eventsList--item" ng-repeat="event in events">
-                    <a ng-href="#/evento/{{event.id}}" title="{{event.title}}">
+                    <a ng-href="#/event/{{event.id}}" title="{{event.title}}">
                         <img class="event-figure" src="{{event.pic}}" alt="{{event.title}}" width="60" height="60">
                         <div class="event-guide">
                             <div itemscope itemtype="http://schema.org/Event">
                                 <span class="event-title" itemprop="name">{{event.title}}</span>
                                 <div style="display:none;">
-                                    <meta itemprop="startDate" content="2014-11-15T08:00">Starts: 11/15/2014 08:00PM</div>
+                                    <meta itemprop="startDate" content="{{event.event_date}}">{{event.event_date}}</div>
                             </div>
                             <div itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
-                                <div><span class="event-place" itemprop="addressLocality">{{event.address.city}}</span>, <span class="event-place" itemprop="addressRegion">{{event.address.state}}</span>
+                                <div><span class="event-place" itemprop="addressLocality">{{event.address.city}}</span>, <span class="event-place" itemprop="addressRegion">{{event.address.state}}, </span>
                                 </div>
                                 <div class="event-place" itemprop="addressCountry">{{event.address.country}}</div>
                             </div>
-                            <time datetime="2014-11-15 08:00">{{event.event_date}}</time>
+                            <time datetime="{{event.event_date}}">{{event.event_date}}</time>
                         </div>
                     </a>
                 </li>

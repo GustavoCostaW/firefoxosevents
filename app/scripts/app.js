@@ -5,11 +5,11 @@ angular.module('firefoxoseventsApp', [
   ])
     .config(function ($routeProvider) {
         $routeProvider
-            .when('/eventos', {
-                templateUrl: 'views/eventos.html',
+            .when('/events', {
+                templateUrl: 'views/events.html',
                 controller: 'EventosController'
-            }).when('/evento/:id', {
-                templateUrl: 'views/evento.html',
+            }).when('/event/:id', {
+                templateUrl: 'views/event.html',
                 controller: 'EventoController'
             }).when('/maps/:id', {
                 templateUrl: 'views/maps.html',

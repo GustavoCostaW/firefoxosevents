@@ -3,15 +3,15 @@
         <header class="event-topbar">
             <a onClick="window.history.go(-1)" class="action action-back glyphicon glyphicon-chevron-left"></a>
             <h5 class="event-title">{{event.title}}</h5>
+            <a itemprop="url" href="{{event.event_link}}" target="_blank" class="action action-info">
+                <span class="glyphicon glyphicon-info-sign"></span>
+            </a>
         </header>
         <section class="event-view">
             <img src="{{event.pic}}" alt="{{event.title}}" class="event-logo" width="150" height="150" />
             <article class="event-information">
                 <time datetime="2014-11-15 08:00" class="event-date">{{event.event_date}}</time>
                 <p class="event-title event-ticketPrice">{{event.price}}</p>
-                <a itemprop="url" href="{{event.event_link}}" target="_blank">
-                    <span class="event-title" itemprop="name">{{event.title}}</span>
-                </a>
                 <footer>
                     <p class="event-description">{{event.description}}</p>
                 <aside class="event-location">
