@@ -6,44 +6,38 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
     directive.restrict = 'E'; /* restrict this directive to elements */
 
     directive.templateUrl = "scripts/directives/leaflet.html";
-    directive.scope =  {
+    directive.scope = {
         id: '=id'
     }
     directive.link = function (scope) {
         ///alert(scope.id);
-            //lightbox mapa
+        //lightbox mapa
+
+        var dir = MQ.routing.directions();
+
+        var lat;
+        var lng;
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+        function showPosition(position) {
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+
             var map = L.map('map', {
                 layers: MQ.mapLayer(),
                 zoom: 17,
-                center: [-9.6576721,-35.711516],
+                center: [position.coords.latitude, position.coords.longitude],
             });
-
-            var dir = MQ.routing.directions();
-
-        function onLocationFound(e) {
-            var radius = e.accuracy / 2;
-            L.marker(e.latlng).addTo(map);
-            L.circle(e.latlng, radius).addTo(map);
-            console.log(e.latLng);
-        }
-
-    
             dir = MQ.routing.directions();
-
+            console.log(lat,lng);
             dir.route({
                 locations: [{
                     latLng: {
-                        lat: -9.6576721,
-                        lng: -35.711516
+                        lat: lat,
+                        lng: lng
                     }
-    }, {
-                    latLng: {
-                        lat:  -9.2576721,
-                        lng: -35.511516
-                    }
-    }]
+    }, 'Centro de convenções maceió alagoas']
             });
-        console.log(123)
 
             var CustomRouteLayer = MQ.Routing.RouteLayer.extend({
                 createStopMarker: function (location, stopNumber) {
@@ -54,18 +48,19 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
                     if (stopNumber == 1) {
                         marker = L.marker(location.latLng).addTo(map).bindPopup('Você está aqui').openPopup();
                     } else {
-                        marker = L.marker(location.latLng).addTo(map).bindPopup('Hey').openPopup();
+                        marker = L.marker(location.latLng).addTo(map).bindPopup('Front in Maceió');
                     }
 
                     return marker;
                 }
             });
-
             map.addLayer(new CustomRouteLayer({
                 directions: dir,
                 fitBounds: true,
                 draggable: false,
             }));
+        }
+
     }
 
     return directive;
