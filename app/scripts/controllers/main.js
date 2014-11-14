@@ -11,8 +11,4 @@ angular.module('firefoxoseventsApp')
         $scope.evento = evento;
     
         $scope.$emit('openLoading');
-    
-        setTimeout(function(){
-            $scope.$emit('closeLoading');
-        },2500)
     });

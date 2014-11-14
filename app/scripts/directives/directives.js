@@ -11,9 +11,6 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
     }
 
     directive.link = function (scope) {
-        ///alert(scope.id);
-        //lightbox mapa
-
         var dir = MQ.routing.directions();
 
         var lat;
@@ -28,6 +25,9 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
                 layers: MQ.mapLayer(),
                 zoom: 17,
                 center: [position.coords.latitude, position.coords.longitude],
+            });
+            map.on("layeradd",function(){
+                 scope.$emit('closeLoading');
             });
             dir = MQ.routing.directions();
             
