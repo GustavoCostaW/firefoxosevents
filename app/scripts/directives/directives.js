@@ -11,7 +11,6 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
     }
 
     directive.link = function (scope,el,attr) {
-        debugger;
         var dir = MQ.routing.directions();
 
         var lat;
@@ -38,7 +37,7 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
                         lat: lat,
                         lng: lng
                     }
-    }, 'Centro de convenções maceió alagoas']
+    },attr.fulladdress]
             });
 
             var CustomRouteLayer = MQ.Routing.RouteLayer.extend({
@@ -50,7 +49,7 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
                     if (stopNumber == 1) {
                         marker = L.marker(location.latLng).addTo(map).bindPopup('Você está aqui').openPopup();
                     } else {
-                        marker = L.marker(location.latLng).addTo(map).bindPopup('Front in Maceió');
+                        marker = L.marker(location.latLng).addTo(map).bindPopup(attr.event);
                     }
 
                     return marker;
