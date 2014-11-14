@@ -10,35 +10,63 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
         id: '=id'
     }
     directive.link = function (scope) {
-        alert(scope.id);
-        var map = L.map('map');
+        ///alert(scope.id);
+            //lightbox mapa
+            var map = L.map('map', {
+                layers: MQ.mapLayer(),
+                zoom: 17,
+                center: [-9.6576721,-35.711516],
+            });
 
-        L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            id: 'examples.map-i875mjb7'
-        }).addTo(map);
+            var dir = MQ.routing.directions();
 
         function onLocationFound(e) {
             var radius = e.accuracy / 2;
-
             L.marker(e.latlng).addTo(map);
-
             L.circle(e.latlng, radius).addTo(map);
+            console.log(e.latLng);
         }
 
-        function onLocationError(e) {
-            alert(e.message);
-        }
+    
+            dir = MQ.routing.directions();
 
-        map.on('locationfound', onLocationFound);
-        map.on('locationerror', onLocationError);
+            dir.route({
+                locations: [{
+                    latLng: {
+                        lat: -9.6576721,
+                        lng: -35.711516
+                    }
+    }, {
+                    latLng: {
+                        lat:  -9.2576721,
+                        lng: -35.511516
+                    }
+    }]
+            });
+        console.log(123)
 
-        map.locate({
-            setView: true,
-            maxZoom: 16
-        });
+            var CustomRouteLayer = MQ.Routing.RouteLayer.extend({
+                createStopMarker: function (location, stopNumber) {
+
+                    var custom_icon,
+                        marker;
+
+                    if (stopNumber == 1) {
+                        marker = L.marker(location.latLng).addTo(map).bindPopup('Você está aqui').openPopup();
+                    } else {
+                        marker = L.marker(location.latLng).addTo(map).bindPopup('Hey').openPopup();
+                    }
+
+                    return marker;
+                }
+            });
+
+            map.addLayer(new CustomRouteLayer({
+                directions: dir,
+                fitBounds: true,
+                draggable: false,
+            }));
     }
-
 
     return directive;
 });
