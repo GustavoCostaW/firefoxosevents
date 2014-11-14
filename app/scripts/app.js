@@ -8,7 +8,7 @@ angular.module('firefoxoseventsApp', [
             .when('/eventos', {
                 templateUrl: 'views/eventos.html',
                 controller: 'EventosController'
-            }).when('/evento', {
+            }).when('/evento/:id', {
                 templateUrl: 'views/evento.html',
                 controller: 'EventoController'
             }).when('/maps/:id', {
