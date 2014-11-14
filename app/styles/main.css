@@ -3,8 +3,124 @@ body {
     height: 100%;
     font-family: 'Fira Sans', Arial, sans-serif;
 }
+html,
+body {
+    height: 100%;
+    font-family: 'Fira Sans', Arial, sans-serif;
+}
 body {
     background-color: #fcfcfc;
+}
+.events header {
+    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+.eventsList--item {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+.eventsList--item a {
+    text-decoration: none;
+}
+.event-title {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+.event-title,
+time {
+    color: #5D6BA1;
+}
+.event-figure {
+    float: left;
+    border-radius: 50%;
+}
+.event-view {
+    padding-top: 20px;
+    height: 100%;
+    text-align: center;
+}
+.event-view .event-title,
+.event-view .event-date {
+    font-size: 1.4rem;
+}
+.event-date {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.event-logo {
+    margin-bottom: 20px;
+}
+.event-information {
+    text-align: left;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.event-information footer {
+    margin-top: 15px;
+}
+.event-description {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    width: 280px;
+    white-space: pre-line;
+    word-break: break-word;
+    color: #9D9D9D;
+    line-height: 16px;
+}
+.event-guide {
+    float: left;
+    padding: 10px 0 0 15px;
+}
+.event-location {
+    padding-right: 20px;
+    position: absolute;
+    top: -3px;
+    right: 0;
+}
+.event-location a .glyphicon-map-marker {
+    font-size: 2rem;
+    color: #000;
+    padding-top: 2px;
+}
+.btn.btn-success {
+    background-color: #18D20C;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+}
+.event-topbar {
+    position: relative;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 2px 2px 0px rgba(102, 102, 102, 0.1);
+}
+.event-topbar .event-title {
+    margin-bottom: 0;
+    padding: 3px 0 0 10px;
+    font-size: 1.5rem;
+    color: #000;
+}
+.action-back {
+    color: #000;
+    font-size: 1.4rem;
+    padding-left: 10px;
+}
+time {
+    font-size: 0.8rem;
+}
+*:not(input):not(textarea) {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 .events,
 ng-view {
@@ -79,7 +195,7 @@ textarea {
 #map {
     margin: 0px;
     padding: 0px;
-    position:relative;
-    top:66px;
+    position: relative;
+    top: 66px;
     height: calc(100% - 66px);
 }

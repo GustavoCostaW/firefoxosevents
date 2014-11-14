@@ -1,9 +1,24 @@
-<section class="event-view">
-	<figure>
-		<img src="#" alt="Event Logo">
-	</figure>
-	<article>
-		<p>Lorem impsum lorem impsum</p>
-		<time>When will be</time>
+<main>
+	<header class="event-topbar">
+		<a onClick="window.history.go(-1)" class="action action-back glyphicon glyphicon-chevron-left"></a>
+		<h5 class="event-title">Front In Maceio</h5>
+	</header>
+	<section class="event-view">
+	<img src="http://frontinmaceio.com.br/images/686328af.logo.png" alt="Front in Maceio Logo" class="event-logo" width="150" height="150">
+	<article class="event-information">
+		<time datetime="2014-11-15 08:00" class="event-date">15/11/2014</time>
+		<p class="event-title event-ticketPrice">R$75,00</p>
+		<footer>
+			<p class="event-description">Ideias inovadoras, desenvolvimento web, tecnologia, conhecimento e muita diversão no 1º Front In do nordeste nos dia 13, 14, 15 de Novembro de 2014.</p>
+		</footer>
+		<aside class="event-location">
+			<a ng-href="/#/maps/{{1}}">
+				<span class="glyphicon glyphicon-map-marker"></span>
+			</a>
+		</aside>
 	</article>
+	<footer class="event-subscription">
+		<a href="http://www.eventick.com.br/front-in-maceio-2014" class="btn btn-success">Inscreva-se</a>
+	</footer>
 </section>
+</main>
