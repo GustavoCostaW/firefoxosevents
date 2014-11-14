@@ -9,6 +9,7 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
     directive.scope = {
         id: '=id'
     }
+
     directive.link = function (scope) {
         ///alert(scope.id);
         //lightbox mapa
@@ -29,7 +30,7 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
                 center: [position.coords.latitude, position.coords.longitude],
             });
             dir = MQ.routing.directions();
-            console.log(lat,lng);
+            
             dir.route({
                 locations: [{
                     latLng: {
@@ -61,6 +62,28 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
             }));
         }
 
+    }
+
+    return directive;
+});
+
+
+
+angular.module('firefoxoseventsApp').directive('loading', function () {
+    var directive = {};
+
+    directive.restrict = 'E'; /* restrict this directive to elements */
+
+    directive.templateUrl = "scripts/directives/loading.html";
+
+    directive.link = function (scope,obj) {
+       
+        scope.$on('openLoading', function (event, data) {
+          obj.css("display","block");
+        });
+        scope.$on('closeLoading', function (event, data) {
+          obj.css("display","none");
+        });
     }
 
     return directive;

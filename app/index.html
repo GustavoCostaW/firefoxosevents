@@ -7,6 +7,7 @@
     <title>EventsFOX</title>
     <script src='../bower_components/angular/angular.min.js'></script>
     <script src='../bower_components/angular-route/angular-route.min.js'></script>
+    <script src='../bower_components/angular-animate/angular-animate.min.js'></script>
     <script src="../bower_components/fastclick/lib/fastclick.js"></script>
     <script src="../bower_components/leaflet/dist/leaflet.js"></script>
 	<script src="http://www.mapquestapi.com/sdk/leaflet/v1.0/mq-map.js?key=Fmjtd%7Cluur2108lu%2Ca5%3Do5-90y506"></script>
@@ -23,7 +24,10 @@
 </head>
 
 <body ng-app="firefoxoseventsApp">
-    <ng-view></ng-view>
+    <loading></loading>
+    <div class="content">
+        <ng-view></ng-view>
+    </div>
 </body>
 
 </html>

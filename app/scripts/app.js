@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('firefoxoseventsApp', [
-    'ngRoute',
+    'ngRoute','ngAnimate'
   ])
     .config(function ($routeProvider) {
         $routeProvider
