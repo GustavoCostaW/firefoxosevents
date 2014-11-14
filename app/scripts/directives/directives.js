@@ -10,7 +10,8 @@ angular.module('firefoxoseventsApp').directive('leaflet', function () {
         id: '=id'
     }
 
-    directive.link = function (scope) {
+    directive.link = function (scope,el,attr) {
+        debugger;
         var dir = MQ.routing.directions();
 
         var lat;
