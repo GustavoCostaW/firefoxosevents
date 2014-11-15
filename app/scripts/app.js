@@ -16,6 +16,6 @@ angular.module('firefoxoseventsApp', [
                 controller: 'MapsController'
             })
             .otherwise({
-                redirectTo: '/eventos'
+                redirectTo: '/events'
             });
     });

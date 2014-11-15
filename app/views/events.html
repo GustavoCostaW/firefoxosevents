@@ -7,7 +7,7 @@
             <ul class="eventsList">
                 <li class="eventsList--item" ng-repeat="event in events">
                     <a ng-href="#/event/{{event.id}}" title="{{event.title}}">
-                        <img class="event-figure" src="{{event.pic}}" alt="{{event.title}}" width="60" height="60">
+                        <img class="event-figure" ng-src="{{event.pic}}" alt="{{event.title}}" width="60" height="60">
                         <div class="event-guide">
                             <div itemscope itemtype="http://schema.org/Event">
                                 <span class="event-title" itemprop="name">{{event.title}}</span>
